@@ -1,0 +1,81 @@
+.well legend{
+	border:0;
+	margin-bottom:0;
+}
+
+.well legend+.control-group{
+	margin-top:0;
+}
+
+.locked{
+	padding-top:5px;
+}
+
+.padding-left{
+    padding-left: 20px;
+}
+
+.radio-inline,
+.checkbox-inline{
+	margin-bottom: 6px;
+	padding: 6px 6px 6px 24px;
+	border-radius: 5px;
+}
+
+.list-category-item{
+    display:table;
+    border-radius: 5px;
+}
+
+.list-category-item label{
+    padding: 6px 6px 2px 6px;
+}
+
+.radio.list-category-item label,
+.checkbox.list-category-item label{
+    display: block;
+}
+
+span.required{
+    font-weight: bold;
+    color: #A94442;
+}
+
+/**
+ * customization for date field
+ */
+
+.input-group-input{
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.input-group-input:first-child > input {
+    margin-right: -1px;
+
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+
+.input-group-input:last-child > input {
+    margin-left: -1px;
+
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+@media (max-width: 767px){
+    .date-divider{
+        margin-bottom: 10px;
+    }
+}
