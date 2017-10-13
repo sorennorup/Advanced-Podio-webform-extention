@@ -37,3 +37,34 @@ if (window.File && window.FileList){
 		}
 	}
 }
+
+function displayErrorTextforEmailField(){
+	
+	$('#154285325').before(function(){
+		return '<p class = "message" style ="float:right; color:#b63333; font-style: italic;font-size: 11px;"></p>';
+	     
+		});
+	
+	$('#154285325').keyup(function(){
+    var value = $(this).val();
+		if(!ValidateEmail(value)){
+			
+			$('.message').html('skal være en emailadresse');
+		}
+		   else{
+			$('.message').html('');
+			$(this).css("background-color","white");
+		  }
+ });
+ 	
+	
+}
+  function ValidateEmail(mail)   
+    {  
+     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))  
+      {  
+        return (true);  
+      }  
+         
+        return (false);  
+    }  

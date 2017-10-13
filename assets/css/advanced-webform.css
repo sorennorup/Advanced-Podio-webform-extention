@@ -20,6 +20,7 @@
 	margin-bottom: 6px;
 	padding: 6px 6px 6px 24px;
 	border-radius: 5px;
+	background-color: #fff !important;
 }
 
 .list-category-item{
@@ -72,6 +73,13 @@ span.required{
     border-bottom-right-radius: 4px !important;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+}
+input.invalid, textarea.invalid{
+	border: 2px solid red;
+}
+
+input.valid, textarea.valid{
+	border: 2px solid green;
 }
 
 @media (max-width: 767px){

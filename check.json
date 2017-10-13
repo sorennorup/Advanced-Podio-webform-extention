@@ -1,0 +1,32 @@
+
+"fields": [
+    {
+      "status": "active",
+      "type": "text",
+      "field_id": 148218251,
+      "label": "Artist Name",
+      "values": [
+        {
+          "value": "SCHEMA_ARTIST"
+        }
+      ],
+      "config": {
+        "default_value": null,
+        "unique": false,
+        "description": null,
+        "hidden_create_view_edit": false,
+        "required": false,
+        "mapping": null,
+        "label": "Artist Name",
+        "visible": true,
+        "delta": 0,
+        "hidden": false,
+        "settings": {
+          "format": "plain",
+          "size": "small"
+        }
+      },
+      "external_id": "artist-name"
+    }
+ 
+    

@@ -205,9 +205,11 @@ class AdvancedWebform {
          */
         if(isset($attributes['app']) && $attributes['app'] instanceof \PodioApp){
                $this->set_app($attributes['app']);
+			  
 				
         } elseif (isset($attributes['app_id']) && $attributes['app_id']){
               $this->set_app( \PodioApp::get($attributes['app_id']) );
+			   
         } else {
 			    
 				throw new Error('App or app id must be set.');
@@ -233,6 +235,7 @@ class AdvancedWebform {
                         'app' => $this->get_app(),
                         'fields' => new \PodioItemFieldCollection()
                 )));
+				
         }
 
         // we don't need these anymore

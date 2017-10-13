@@ -65,20 +65,26 @@ abstract class Element {
 	protected $decorators = array();
 
 	public function __construct(\PodioAppField $app_field, \AdvancedWebform\AdvancedWebform $form, $item_field = null, $attributes = null) {
-            if ($app_field->status != "active"){
+            
+			
+			if ($app_field->status != "active"){
                     throw new \ErrorException('Field is not active');
             }
 
             $this->set_app_field($app_field);
+			
 
             $this->form = $form;
 
             if(!$item_field){
+				
                     $class_name = 'Podio' . ucfirst($app_field->type) . 'ItemField';
+					$class_name.'<br/>';
                     $this->set_item_field(new $class_name(array(
                             'field_id' => $app_field->field_id,
                             'external_id' => $app_field->external_id,
                     )));
+					
             } else {
                     $this->set_item_field($item_field);
                     $this->set_attribute('value', $item_field->humanized_value());

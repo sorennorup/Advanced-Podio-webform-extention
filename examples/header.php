@@ -5,11 +5,12 @@
 		<title>Podio udvidet tilmeldingsformular</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="../assets/css/advanced-webform.css">
-		<script type = "../assets/js/advanced-webform.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="../assets/js/advanced-webform.js"></script>
 	</head>
-<body>
+<body style = "width:100%;">
 	
-	<div id="main" class="container">
+	<div style = "width: 400px; margin: 0 auto;" id="main" class="container">
 		<div class="row">
 			<div class="span12">
 				<?php $title = (isset($title)) ? $title : 'Podio udvidet tilmeldingsform'; ?>

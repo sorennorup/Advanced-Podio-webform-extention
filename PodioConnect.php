@@ -3,7 +3,7 @@
 just include podio_connect.php in your script and create an podio_connect object and you kan start interacting with Podio*/
 /* The methods in this class get all the values of the fields in a Podio App and all the field names. */
 require  "podio-php/PodioAPI.php";
-include 'config.php';
+include '../../config.php';
 
 
 Podio::setup($client_secret,$client_token , array(
@@ -11,7 +11,7 @@ Podio::setup($client_secret,$client_token , array(
 ));
 
   class PodioConnect {
-   private $allItems=array();
+   public $allItems=array();
    private $itemArray=array();
    private  $allValue=array();
    private  $allExteral_ids=array();
@@ -19,7 +19,7 @@ Podio::setup($client_secret,$client_token , array(
    
  //constructor for connecting with podio when creating the object
    function __construct($app_id){
-     include 'config.php' ;
+     include '../../config.php' ;
      if (Podio::is_authenticated()) {       
        }
        else {
@@ -39,16 +39,17 @@ Podio::setup($client_secret,$client_token , array(
        $this->allExteral_ids = $this->getExternalIds();
    }
    // get all the fieldvalues of the app
-   public function getAllFieldValues(){     
+   public static function getAllFieldValues($app_id){
+    $allItems = array();
       $i=0;
-      $items =  PodioItem::filter($this->app_id,array('limit' => 100));
-    
-      foreach ($items['items'] as $item) {
+      $res = PodioItem::filter($app_id);
+     print_r($res);
+      foreach ($res['items'] as $item) {
   // Now you can extract values from the individual item. E.g.:
          for($j=0;$j < count($this->allExteral_ids);$j++){   
-            
+           
              $field = $item->field($this->allExteral_ids[$j]);
-
+              
              if(isset($field)){
            
                  $this->allValue[$j] = $field->humanized_value();
@@ -57,7 +58,7 @@ Podio::setup($client_secret,$client_token , array(
                      $this->allValue[$j] = "ikke angivet";
                   }
         }
-      $allItems[$i] = $this->allValue;
+         $allItems[$i] = $this->allValue;
   
  $i++;
 }

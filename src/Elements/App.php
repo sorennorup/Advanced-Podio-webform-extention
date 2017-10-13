@@ -61,7 +61,7 @@ class App extends Element{
 
         // load a new AdvancedWebform in the sub_form attribute
         $this->set_attribute('referenced_apps', $app_field->config['settings']['referenced_apps']);
-
+        
         if (!$this->get_attribute('referenced_apps')){
             throw new \Exception('No app chosen as reference');
         }
